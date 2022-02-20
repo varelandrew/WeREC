@@ -12,20 +12,18 @@ function googleLogin() {
 
                 const db = firebase.firestore();
                 
-                const usersRef = db.collection('users').doc(user.uid)
+                var record = db.collection('users').doc(user.uid)
 
-                usersRef.get()
-                    .then((docSnapshot) => {
+                record.get()
+                    .then(docSnapshot => {
                         if (docSnapshot.exists) {
-                            usersRef.onSnapshot((doc) => {
-                                const users = db.collection('users').doc(user.uid).update(
-                                    {
-                                        logins: firebase.firestore.FieldValue.increment(1)
-                                    }
-                                );
-                        });
+                            record.update(
+                                {
+                                    logins: firebase.firestore.FieldValue.increment(1)
+                                }
+                            );
                         } else {
-                            const users = db.collection('users').doc(user.uid).set(
+                            record.set(
                                 {
                                     logins: 0
                                 }
