@@ -24,14 +24,36 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
   </head>
-
   <body>
 
-    <h1 id="Welcome to WeRec"></h1>
+  <style>
 
-    <button onclick="googleLogin()">
-      Login with Google
-    </button>
+    .centerText {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+  </style>
+    <div>
+      <h1><center>Welcome to WeREC</center></h1>
+      <img src="https://www.seattleu.edu/media/the-commons/FitnessCenter_yck_Exterior_1200.jpg" alt="UREC Picture" width="1000" height="200">
+    </div>
+    <div class="center">
+      <button onclick="googleLogin()">
+        Login with Google
+      </button>
+    </div>
 
     <script src = "app.js">
     </script> 
