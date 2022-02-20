@@ -5,6 +5,8 @@ function googleLogin() {
         .then(result => {
             const user = result.user;
 
+            document.write('Hello, ', user.displayName, '!');
+
             console.log(user)
 
             const app = firebase.app();
